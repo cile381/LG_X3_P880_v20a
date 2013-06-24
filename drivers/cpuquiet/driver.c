@@ -163,7 +163,6 @@ int cpuquiet_register_driver(struct cpuquiet_driver *drv)
 	if (!cpuquiet_curr_driver) {
 		err = 0;
 		cpuquiet_curr_driver = drv;
-		cpuquiet_switch_governor(cpuquiet_get_first_governor());
 	}
 	mutex_unlock(&cpuquiet_lock);
 
@@ -200,3 +199,4 @@ void cpuquiet_unregister_driver(struct cpuquiet_driver *drv)
 	mutex_unlock(&cpuquiet_lock);
 }
 EXPORT_SYMBOL(cpuquiet_unregister_driver);
+
